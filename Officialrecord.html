@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Official Record Page</title>
+    <style>
+        *{
+             padding: 0;
+              margin: 0;
+              box-sizing: border-box;
+             }
+        body{ background-image: linear-gradient(#0749fd,#12cde6);
+             background-size: cover;
+             background-repeat: no-repeat;
+             height: 990px;
+             font-family: Arial, sans-serif;
+             }
+        table { 
+            border-collapse: collapse; 
+            width: 80%; 
+        }
+        th, td {
+             border: 3px solid #ddd;
+              padding: 10px;
+               text-align: left;
+            }
+        th { 
+          background-color: #c7afdf;
+
+        }
+        td{
+            background-color: aliceblue;
+        }
+         .name h1{
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+            padding-top: 0%;
+            margin-left: 25%;
+            margin-top: -66%;
+        }
+        ul li:hover{
+            background-color: greenyellow;
+            width: 190px;
+        }
+        ul li a{
+            text-decoration: none;
+            color: #000;
+        }
+        .lol{
+    background-color: rgb(221, 213, 203);
+    text-align: center;
+    width: 300px;
+    height: 990px;
+    font-size: 26px;
+
+}
+.lol ul{
+  list-style: none;
+  padding-top:19% ;
+ flex-direction: column;
+ gap: 5px;
+ float: left;
+ position: static;
+}
+.lol ul li{
+    padding: 10px ;
+    gap: 20px;
+    font-size: 19px;
+    margin-left: 29%;
+    text-align: center;
+}
+.lol ul li a{
+    text-decoration: none;
+    color: rgb(75, 31, 233);
+     
+}
+   .lol li:hover{
+     background-color: greenyellow;
+    width: 150px;
+          }
+          .offi h1{
+            color: aliceblue;
+            margin-left: 30%;
+          }
+          .offi {
+            margin-top: 3%;
+            margin-left: 29%;
+          }
+           .offi h2{
+            color: aliceblue;
+        
+          }
+           .offi p{
+            color: aliceblue;
+            
+          }
+          .ptt{
+              background-color: chartreuse;
+            width: 130px;
+            height: 30px;
+            border:none;
+            border-radius: 30px;
+            margin-top: 1%;
+          }
+    </style>
+</head>
+<body>
+<div class="lol">
+<ul>
+ <li><a href="login.html">Home</a></li>
+ <li><a href="Courses1.html">Course&Section</a></li>
+ <li><a href="subject.html">Class.Subject</a></li>
+ <li><a href="Crecord.html">Class.Record</a></li>
+ <li><a href="Officialrecord.html">Official.Record</a></li>
+ <li ><a href="login.html">logout</a></li>
+</ul>
+</div>
+<div class="name">
+<h1>E-Class Record</h1>
+  </div>
+    <br><br>
+    <hr style=" border: 2px solid whitesmoke; width: 950px; margin-left: 26%; margin-top: -1%;">
+
+
+    <div class="offi">
+    <h1>Official Record</h1>
+    <h2 id="student-name"></h2>
+    <p>ID: <span id="student-id"></span></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody id="grades-table">
+            <tr>
+                <td>Web Development</td>
+                <td id="student-grade"></td>
+            </tr>
+            <tr>
+                <td>Computer Programming 2</td>
+                <td id="student-grade">1.25</td>
+            </tr>
+            <tr>
+                <td>Human Center Interface</td>
+                <td id="student-grade">1.5</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="ptt" onclick="print()">Print</button>
+</div>
+    <script>
+        let currentStudent = JSON.parse(localStorage.getItem("currentStudent"));
+        document.getElementById("student-name").innerHTML = currentStudent.name;
+        document.getElementById("student-id").innerHTML = currentStudent.id;
+        
+         document.getElementById("student-grade").innerHTML = currentStudent.grade;
+         document.getElementById("student-grade").innerHTML = currentStudent.grade;
+         document.getElementById("student-grade").innerHTML = currentStudent.grade;
+
+         function print(){
+            window.print();
+        }
+         
+    </script>
+</body>
+</html>

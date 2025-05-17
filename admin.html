@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Approval Page</title>
+    <style>
+        *{ 
+            padding: 0;
+             margin: 0;
+              box-sizing: border-box;
+             }
+        body{ 
+            background-image: linear-gradient(#0749fd,#12cde6);
+             background-size: cover; 
+             background-repeat: no-repeat;
+              height: 990px; 
+              font-family: Arial, sans-serif;
+            }
+        table {
+            border-collapse: collapse;
+             width: 80%; 
+            }
+        th, td { 
+            border: 3px solid #ddd;
+             padding: 10px;
+              text-align: left;
+             }
+        th {
+              background-color: #c7afdf;
+
+        }
+        td{
+background-color: aliceblue;
+        }
+         .name h1{
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+            padding-top: 0%;
+            margin-left: 25%;
+            margin-top: -66%;
+        }
+        ul li:hover{
+            background-color: greenyellow;
+            width: 190px;
+        }
+        ul li a{
+            text-decoration: none;
+            color: #000;
+        }
+        .lol{
+    background-color: rgb(221, 213, 203);
+    text-align: center;
+    width: 300px;
+    height: 990px;
+    font-size: 26px;
+
+}
+.lol ul{
+  list-style: none;
+  padding-top:19% ;
+ flex-direction: column;
+ gap: 5px;
+ float: left;
+ position: static;
+}
+.lol ul li{
+    padding: 10px ;
+    gap: 20px;
+    font-size: 19px;
+    margin-left: 29%;
+    text-align: center;
+}
+.lol ul li a{
+    text-decoration: none;
+    color: rgb(75, 31, 233);
+     
+}
+   .lol li:hover{
+     background-color: greenyellow;
+    width: 150px;
+          }
+          .admin {
+            margin-left: 29%;
+            margin-top: 3%;
+          }
+          .admin h1{
+            color: azure;
+          }
+           .ads{
+            background-color: chartreuse;
+            width: 90px;
+            height: 30px;
+            border:none;
+            border-radius: 30px;
+          }
+           .rec{
+            background-color: red;
+            width: 90px;
+            height: 30px;
+            border:none;
+            border-radius: 30px;
+          }
+    </style>
+</head>
+<body>
+    <div class="lol">
+<ul>
+ <li><a href="login.html">Home</a></li>
+ <li><a href="Courses1.html">Course&Section</a></li>
+ <li><a href="subject.html">Class.Subject</a></li>
+ <li><a href="Crecord.html">Class.Record</a></li>
+ <li><a href="Officialrecord.html">Official.Record</a></li>
+ <li ><a href="login.html">logout</a></li>
+</ul>
+</div>
+<div class="name">
+<h1>E-Class Record</h1>
+  </div>
+    <br><br>
+    <hr style=" border: 2px solid whitesmoke; width: 950px; margin-left: 26%; margin-top: -1%;">
+    <div class="admin">
+    <h1>Admin Approval</h1>
+    <table id="approval-table">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Grade</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+    </div>
+    <script>
+        let students = [
+            { id: "2442235", name: "Jasfer Pascual", grade: 1.50, status: "Pending" },
+            { id: "2442236", name: "Regina Bato", grade: 1.25, status: "Pending" },
+            { id: "2442237", name: "Haezel Zamora", grade: 1.50, status: "Pending" }
+        ];
+        var tableBody = document.getElementById("table-body");
+        students.forEach((student) => {
+            let row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${student.id}</td>
+                <td>${student.name}</td>
+                <td>${student.grade}</td>
+                <td>${student.status}</td>
+                <td>
+                    <button class="ads" onclick="approveStudent('${student.id}')">Approve</button>
+
+                    <button class="rec" onclick="rejectStudent('${student.id}')">Reject</button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+        function approveStudent(id) {
+            students.forEach((student) => {
+                if (student.id === id) {
+                    student.status = "Approved";
+                    localStorage.setItem("currentStudent", JSON.stringify(student));
+                    window.location.href = "student.html";
+                }
+            });
+            let rows = document.querySelectorAll("#approval-table tbody tr") ;
+            rows.forEach((row) => {
+                if (row.cells[0].textContent === id) {
+                    row.cells[3].textContent = "Approved";
+                }
+            });
+        }
+        function rejectStudent(id) {
+            students.forEach((student) => {
+                if (student.id === id) {
+                    student.status = "Rejected";
+                }
+            });
+            let rows = document.querySelectorAll("#approval-table tbody tr");
+            rows.forEach((row) => {
+                if (row.cells[0].textContent === id) {
+                    row.cells[3].textContent = "Rejected";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+

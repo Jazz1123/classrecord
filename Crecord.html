@@ -1,0 +1,377 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Record</title>
+</head>
+<style>
+    *{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;   
+    }
+     body{
+        
+            background-image: linear-gradient(#0749fd,#12cde6);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 990px;
+        }
+        .name h1{
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+            padding-top: 0%;
+            margin-left: 25%;
+            margin-top: -66%;
+        }
+        ul li:hover{
+            background-color: greenyellow;
+            width: 190px;
+        }
+        ul li a{
+            text-decoration: none;
+            color: #000;
+        }
+        .lol{
+    background-color: rgb(221, 213, 203);
+    text-align: center;
+    width: 300px;
+    height: 990px;
+    font-size: 26px;
+
+}
+.lol ul{
+  list-style: none;
+  padding-top:19% ;
+ flex-direction: column;
+ gap: 5px;
+ float: left;
+ position: static;
+}
+.lol ul li{
+    padding: 10px ;
+    gap: 20px;
+    font-size: 19px;
+    margin-left: 29%;
+    text-align: center;
+}
+.lol ul li a{
+    text-decoration: none;
+    color: rgb(75, 31, 233);
+     
+}
+   .lol li:hover{
+     background-color: greenyellow;
+    width: 150px;
+          }
+    .class-list{
+     display: flex;
+     margin-left:25% ;
+     margin-top: 5%;
+      }
+     .course-card {
+        background-color: aliceblue;
+        width: 300px;
+        height: 200px;
+        text-align: center;
+       box-shadow: 0px 8px 16px 0px wheat;
+     }  
+     .course-card button{
+        margin-top: 17%;
+     }   
+    .course-card h1{
+         font-size: 25px;
+           margin-top: 4%;
+    }
+    .course-card h2{
+         font-size: 20px;
+    }
+      .course-card2 {
+        background-color: aliceblue;
+        width: 300px;
+        height: 200px;
+        text-align: center;
+       margin-left: 3%;
+        box-shadow: 0px 8px 16px 0px wheat;
+     }     
+    .course-card2 h1{
+         font-size: 25px;
+           margin-top: 4%;
+    }
+    .course-card2 h2{
+         font-size: 20px;
+    }
+ .course-card3 {
+        background-color: aliceblue;
+        width: 300px;
+        height: 200px;
+        text-align: center;
+      margin-left: 3%;
+       box-shadow: 0px 8px 16px 0px wheat;
+     }     
+    .course-card3 h1{
+         font-size: 25px;
+         margin-top: 4%;
+    }
+    .course-card3 h2{
+         font-size: 20px;
+    }
+  button{
+    margin-top: 9%;
+  }
+  #student-table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+#student-table th, #student-table td {
+    border: 3px solid #ddd;
+    padding: 5px;
+    text-align: left;
+}
+
+#student-table th {
+              background-color: #c7afdf;
+    
+}
+.record1{
+    display: none;
+}
+ table tr td{
+    background-color: antiquewhite;
+}
+.student{
+    margin-left: 27%;
+    margin-top: 2%;
+}
+.record1 button{
+    margin-top: 13px;
+}
+.course-card button{
+    background-color: lawngreen;
+    width:130px ;
+    height: 30px;
+    border-radius: 35px;
+    border: none;
+}
+.course-card2 button{
+    background-color: lawngreen;
+    width:130px ;
+    height: 30px;
+    border-radius: 35px;
+    border: none;
+}
+.course-card3 button{
+    background-color: lawngreen;
+    width:130px ;
+    height: 30px;
+    border-radius: 35px;
+    border: none;
+}
+.edit-btn {
+    background-color: lawngreen;
+    height: 25px;
+    width: 70px;
+    border-radius: 30px;
+    border: none;
+}
+.delete-btn{
+    background-color: rgb(250, 95, 33);
+    height: 25px;
+    width: 70px;
+    border-radius: 31px;
+    border: none;
+}
+.click button{ 
+    background-color: lawngreen;
+    width:130px ;
+    height: 30px;
+    border-radius: 35px;
+    border: none;
+}
+</style>
+<body>
+    <div class="lol">
+<ul>
+ <li><a href="login.html">Home</a></li>
+ <li><a href="Courses1.html">Course&Section</a></li>
+ <li><a href="subject.html">Class.Subject</a></li>
+ <li><a href="Crecord.html">Class.Record</a></li>
+ <li><a href="Officialrecord.html">Official.Record</a></li>
+ <li ><a href="login.html">logout</a></li>
+</ul>
+</div>
+<div class="name">
+<h1>E-Class Record</h1>
+  </div>
+    <br><br>
+    <hr style=" border: 2px solid whitesmoke; width: 950px; margin-left: 26%; margin-top: -1%;">
+   <div class="class-list">
+     <div class="course-card">
+            <h1>WEB DEVELOPMENT</h1>
+            <h2>Instructor:</h2><h4>Joana Marie Cruz</h4>
+            <h2>ACT -1A</h2>
+        <button onclick="showStudent()">Students Record</button>
+        </div>
+       <div class="course-card2">
+            <h1>COMPUTER PROGRAMING 2</h1>
+             <h2>Instructor:</h2><h4>Migs Gatchalian</h4>
+            <h2>ACT -1A</h2>
+            <button onclick="showStudent()">Students Record</button>
+        </div>
+         <div class="course-card3">
+            <h1>HUMAN-CENTER-INTERFACES</h1>
+             <h2>Instructor:</h2><h4>Deserie Robles</h4>
+            <h2>ACT -1A</h2>
+            <button onclick="showStudent()">Students Record</button>
+        </div>
+   </div>
+
+    <div class="student">
+        <div class="record1" id="record1" >
+            <h1 style="color: aliceblue;">Record-list</h1>
+    <table id="student-table">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Quiz</th>
+                <th>Activity</th>
+                <th>Project</th>
+                <th>Midterm Exam</th>
+                <th>Final Exam</th>
+                <th>Attendance</th>
+                <th>Grade</th>
+                <th >Actions</th>
+            </tr>
+        </thead>
+        <tbody id="student-table-body">
+        </tbody>
+    </table>
+  <div class="click">
+    <button  id="add-student-btn">Add Student</button>
+    <button  onclick="admin()">Admin Approval</button>
+</div>    
+        </div>
+    </div>
+
+    <script>
+
+   function showStudent() {
+            document.getElementById('record1').style.display = 'block';
+        }
+
+
+     var students = [
+    { id: 2442235, name: 'Jasfer Pascual', quiz:'10', activity:'90', project:'100', mexam:'49', fexam:'59', attendance:'15%', grade: '1.50' },
+    { id: 2442236, name: 'Regina Bato', quiz:'10', activity:'98', project:'100', mexam:'59', fexam:'49', attendance:'15%',grade: '1.25' },
+    { id: 2442237, name: 'Haezel Zamora', quiz:'10', activity:'90', project:'100', mexam:'49', fexam:'59', attendance:'15%', grade: '1.50' },
+];
+
+function displayStudents() {
+    const studentTableBody = document.getElementById('student-table-body');
+    studentTableBody.innerHTML = '';
+    students.forEach((student) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${student.id}</td>
+            <td>${student.name}</td>
+             <td>${student.quiz}</td>
+             <td>${student.activity}</td>
+             <td>${student.project}</td>
+            <td>${student.mexam}</td>
+             <td>${student.fexam}</td>
+              <td>${student.attendance}</td>
+            <td>${student.grade}</td>
+            
+            <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </td>
+        `;
+        studentTableBody.appendChild(row);
+        const editBtn = row.querySelector('.edit-btn');
+        editBtn.addEventListener('click', () => {
+            row.cells[1].contentEditable = 'true';
+            row.cells[2].contentEditable = 'true';
+            row.cells[3].contentEditable = 'true';
+           row.cells[4].contentEditable = 'true';
+           row.cells[5].contentEditable = 'true';
+           row.cells[6].contentEditable = 'true';
+            row.cells[7].contentEditable = 'true';
+           row.cells[8].contentEditable = 'true';
+ 
+            editBtn.textContent = 'Save';
+            editBtn.classList.remove('edit-btn');
+            editBtn.classList.add('save-btn');
+            editBtn.addEventListener('click', saveChanges);
+        });
+
+        const deleteBtn = row.querySelector('.delete-btn');
+        deleteBtn.addEventListener('click', () => {
+            students = students.filter((s) => s.id !== student.id);
+            row.parentNode.removeChild(row);
+            console.log(students);
+        });
+    });
+}
+
+function saveChanges(event) {
+    const row = event.target.parentNode.parentNode;
+    const id = parseInt(row.cells[0].textContent);
+    const name = row.cells[1].textContent;
+    const quiz = row.cells[2].textContent;
+    const activity = row.cells[3].textContent;
+   const project = row.cells[4].textContent;
+    const mexam = row.cells[5].textContent;
+    const fexam = row.cells[6].textContent;
+    const attendance = row.cells[7].textContent;
+    const grade = row.cells[8].textContent;
+    
+    const student = students.find((s) => s.id === id);
+    student.name = name;
+   student.quiz = quiz;
+    student.activity = activity;
+    student.project = project;
+    student.mexam = mexam;
+    student.fexam = fexam;
+    student.attendance = attendance;
+    student.grade = grade;
+    row.cells[1].contentEditable = 'false';
+    row.cells[2].contentEditable = 'false';
+    row.cells[3].containEditable = 'false';
+    row.cells[4].containEditable = 'false';
+    row.cells[5].containEditable = 'false';
+  row.cells[6].containEditable = 'false';
+row.cells[7].containEditable = 'false';
+row.cells[8].containEditable = 'false';
+
+
+    event.target.textContent = 'Edit';
+    event.target.classList.remove('save-btn');
+    event.target.classList.add('edit-btn');
+    event.target.removeEventListener('click', saveChanges);
+    event.target.addEventListener('click', () => {
+        row.cells[1].contentEditable = 'true';
+        row.cells[2].contentEditable = 'true';
+        row.cell[3].contentEfittable = 'true';
+        event.target.textContent = 'Save';
+        event.target.classList.remove('edit-btn');
+        event.target.classList.add('save-btn');
+        event.target.addEventListener('click', saveChanges);
+    });
+}
+
+document.getElementById('add-student-btn').addEventListener('click', () => {
+    const newStudent = { id: students.length + 2442237, name: 'New Student', quiz:'10' ,activity:'100',project:'100', mexam:'60', fexam:'60', attendance:'15', grade: '1.00' };
+    students.push(newStudent);
+    displayStudents();
+});
+   function admin(){
+    window.location.href ="admin.html";
+   }
+displayStudents();
+ 
+    </script>
+</body>
+</html>

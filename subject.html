@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Class</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(#0749fd,#12cde6);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th, td {
+    background-color: rgb(237, 244, 245);
+    border: 2px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    width: 45%;
+}
+
+th {
+    background-color: #c7afdf;
+}
+
+.open {
+    color: rgb(7, 145, 7);
+}
+
+.close {
+    color: red;
+}
+.bor23{
+    margin-left: 30%;
+}
+.class h1{
+     color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+            padding-top: 3%;
+            margin-left: 6%;
+}
+button{
+    width: 60px;
+    border-radius: 30px;
+    flex-direction: column;
+    margin: 1%;
+}
+ .name h1{
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+            padding-top: 0%;
+            margin-left: 25%;
+            margin-top: -54%;
+        }
+        ul li:hover{
+            background-color: greenyellow;
+            width: 190px;
+        }
+        ul li a{
+            text-decoration: none;
+            color: #000;
+        }
+        .lol{
+    background-color: rgb(221, 213, 203);
+    text-align: center;
+    width: 300px;
+    height: 800px;
+    font-size: 26px;
+
+}
+.lol ul{
+    list-style: none;
+      padding-top:19% ;
+    flex-direction: column;
+    gap: 5px;
+ float: left;
+ position: relative;
+}
+.lol ul li{
+    padding: 10px ;
+    gap: 20px;
+    font-size: 19px;
+    margin-left: 17%;
+}
+.lol ul li a{
+    text-decoration: none;
+    color: rgb(75, 31, 233);
+     
+}
+</style>
+<body>
+       <div class="lol">
+<ul>
+ <li><a href="login.html">Home</a></li>
+ <li><a href="Courses1.html">Course&Section</a></li>
+ <li><a href="subject.html">Class.Subject</a></li>
+ <li><a href="Crecord.html">Class.Record</a></li>
+ <li><a href="Officialrecord.html">Official.Record</a></li>
+ <li ><a href="login.html">logout</a></li>
+</ul>
+</div>
+<div class="name">
+<h1>E-Class Record</h1>
+  </div>
+    <br><br>
+    <hr style=" border: 2px solid whitesmoke; width: 950px; margin-left: 25%; margin-top: -1%;">
+       </div>
+     <h1 style=" margin-left: 30%;  margin-top: 11%;  width: 850px; background-color: #2158ee;  text-align: center; color: aliceblue; border: 2px solid white;" >Class Subject</h1>
+    <div class="bor23">
+    <h2 id="course-name"></h2>
+    <h2 id="section-name"></h2>
+    <table id="subject-table"> 
+              
+        <thead> 
+            <tr>
+                <th>Subject</th>
+                <th>Instructor</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="subject-table-body">
+
+            
+        </tbody>
+    </table>
+    </div>
+    <script>
+const urlParams = new URLSearchParams(window.location.search);
+const course = urlParams.get('course');
+const section = urlParams.get('section');
+
+document.getElementById('course-name').textContent = course;
+document.getElementById('section-name').textContent = section;
+
+
+const subjectData = [
+    { subjectName: 'Web Development', Instructor:'Joana marie Cruz' , Date:'05/24/2025', status: 'Open' },
+    { subjectName: 'Computer Programming 2', Instructor:'Migs Gatchalian',Date:'05/24/2025', status: 'Close' },
+    { subjectName: 'Human Center Interfaces', Instructor:'Deserie Robles',Date:'05/24/2025', status: 'Open' },
+];
+
+
+const subjectTableBody = document.getElementById('subject-table-body');
+subjectData.forEach((data) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${data.subjectName}</td>
+        <td>${data.Instructor}</td>
+        <td>${data.Date}</td>
+        <td class="${data.status.toLowerCase()}">${data.status}</td>
+        <td>
+    ${data.status === 'Open' ? '<button style="background-color:green; color:white;"onclick="">Submit </button>' : '<button >Submit </button>'}
+     <button onclick="record()">Edit </button>
+     
+        </td>
+    `;
+
+    subjectTableBody.appendChild(row);
+});
+ function record(){
+    window.location.href ="Crecord.html";
+ }
+     
+    </script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="log.css">
+    <title>ECR-Login</title>
+</head>
+<body>
+
+  <div class="lol">
+<ul>
+ <li><a href="login.html">Home</a></li>
+ <li><a href="Courses1.html">Course&Section</a></li>
+ <li><a href="subject.html">Class.Subject</a></li>
+ <li><a href="#">Class.Record</a></li>
+ <li><a href="#">Official.Record</a></li>
+ <li ><a href="login.html">logout</a></li>
+</ul>
+</div>
+<div class="name">
+<h1>E-Class Record</h1>
+  </div>
+    <div class="logs">
+        <h1>Login</h1>
+        <form  method="post" name="formnum">
+      <label for="uname"><b>Username:</b></label>
+      <input type="text" name="Username" required>
+      <label for="uname"><b>Password:</b></label>
+      <input type="password" name="Password" required>
+        </form>
+        <button onclick="log()">Login</button>
+    </div>
+<Script>
+    function log(){
+      const Username = document.formnum.Username.value;
+      const Password = document.formnum.Password.value;
+
+      if(Username === 'admin' && Password === 'pass123'){
+        alert('Login Successfully');
+        window.location.href ="Courses1.html";
+      }
+   else{
+    alert('Invalid username or password')
+   }
+
+    }
+</Script>
+</body>
+</html>
