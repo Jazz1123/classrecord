@@ -45,6 +45,7 @@ th {
 }
 .bor23{
     margin-left: 30%;
+    margin-top: -0%;
 }
 .class h1{
      color: aliceblue;
@@ -63,28 +64,28 @@ button{
             font-family: 'Courier New', Courier, monospace;
             padding-top: 0%;
             margin-left: 25%;
-            margin-top: -54%;
+            margin-top: -68%;
         }
         ul li:hover{
-            background-color: greenyellow;
-            width: 190px;
+            background-color: skyblue;
+            width: 170px;
         }
         ul li a{
             text-decoration: none;
             color: #000;
         }
         .lol{
-    background-color: rgb(221, 213, 203);
+    background-color:white;
     text-align: center;
     width: 300px;
-    height: 800px;
+    height: 990px;
     font-size: 26px;
 
 }
 .lol ul{
     list-style: none;
-      padding-top:19% ;
-    flex-direction: column;
+   padding-top:10% ;
+ flex-direction: column;
     gap: 5px;
  float: left;
  position: relative;
@@ -92,24 +93,27 @@ button{
 .lol ul li{
     padding: 10px ;
     gap: 20px;
-    font-size: 19px;
-    margin-left: 17%;
+    font-size: 21px;
+    margin-left: 40%;
 }
 .lol ul li a{
     text-decoration: none;
-    color: rgb(75, 31, 233);
-     
+    color: rgb(75, 31, 233);    
+}
+       .lol img{
+    margin-top:8%;
 }
 </style>
 <body>
-       <div class="lol">
+     <div class="lol">
+    <img src="logo.jpg" alt="logo" style="width: 230px; height: 160px; border-radius: 90px;">
 <ul>
- <li><a href="login.html">Home</a></li>
+ 
  <li><a href="Courses1.html">Course&Section</a></li>
  <li><a href="subject.html">Class.Subject</a></li>
  <li><a href="Crecord.html">Class.Record</a></li>
  <li><a href="Officialrecord.html">Official.Record</a></li>
- <li ><a href="login.html">logout</a></li>
+ <li ><a href="login.html">Logout</a></li>
 </ul>
 </div>
 <div class="name">
@@ -118,7 +122,7 @@ button{
     <br><br>
     <hr style=" border: 2px solid whitesmoke; width: 950px; margin-left: 25%; margin-top: -1%;">
        </div>
-     <h1 style=" margin-left: 30%;  margin-top: 11%;  width: 850px; background-color: #2158ee;  text-align: center; color: aliceblue; border: 2px solid white;" >Class Subject</h1>
+     <h1 style=" margin-left: 30%;  margin-top: 4%;  width: 850px; background-color: #2158ee;  text-align: center; color: aliceblue; border: 2px solid white;" >Class Subject</h1>
     <div class="bor23">
     <h2 id="course-name"></h2>
     <h2 id="section-name"></h2>
@@ -164,8 +168,8 @@ subjectData.forEach((data) => {
         <td>${data.Date}</td>
         <td class="${data.status.toLowerCase()}">${data.status}</td>
         <td>
-    ${data.status === 'Open' ? '<button style="background-color:green; color:white;"onclick="">Submit </button>' : '<button >Submit </button>'}
-     <button onclick="record()">Edit </button>
+    ${data.status === 'Open' ? '<button style="background-color:green; color:white; border:none;"onclick="" ></button>' : '<button style="border:none;"> </button>'}
+     <button style="background-color:green; color:white; border:none; height:30px;" onclick="record()">Edit </button>
      
         </td>
     `;

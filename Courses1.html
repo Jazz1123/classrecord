@@ -11,7 +11,7 @@
             box-sizing: border-box;
         }
         body{
-            background-image: linear-gradient(#0749fd,#12cde6);
+           background-image: linear-gradient(blue);
             background-size: cover;
             background-repeat: no-repeat;
             height: 800px;
@@ -27,11 +27,12 @@
             display: inline-block;
             background-color: #ccedf1;
             height: 230px;
-            margin-left: 39%;
+            top: 0%;
             border: 2px solid rgb(92, 10, 223);
             box-shadow: 0px 10px 16px 0px whitesmoke;
             width: 600px;
-            margin-top: -1%;
+            margin: 8%;
+           margin-left: 20%;
         }
         .dropdown-content {
             display: none;
@@ -52,7 +53,7 @@
             top: 0;
             height: 70px;
             background-color: #f9f9f9;
-            width: 125px;
+            width: 135px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         }
         .dropdown-content li:hover > ul {
@@ -79,27 +80,28 @@
             font-family: 'Courier New', Courier, monospace;
             padding-top: 0%;
             margin-left: 25%;
-            margin-top: -54%;
+            margin-top: -68%;
         }
         ul li:hover{
-            background-color: greenyellow;
+         background-color: skyblue;
+            
         }
         ul li a{
-            text-decoration: none;
-            color: #000;
+        text-decoration: none;
+        color: black;
         }
-        .lol{
-    background-color: rgb(221, 213, 203);
+         .lol{
+    background-color:white;
     text-align: center;
     width: 300px;
-    height: 800px;
+    height: 990px;
     font-size: 26px;
 
 }
 .lol ul{
     list-style: none;
-      padding-top:19% ;
-    flex-direction: column;
+   padding-top:10% ;
+ flex-direction: column;
     gap: 5px;
  float: left;
  position: relative;
@@ -107,25 +109,29 @@
 .lol ul li{
     padding: 10px ;
     gap: 20px;
-    font-size: 19px;
-    margin-left: 7%;
+    font-size: 21px;
+    margin-left: 25%;
 }
 .lol ul li a{
     text-decoration: none;
-    color: rgb(75, 31, 233);
-     
+    color: rgb(75, 31, 233);    
 }
+       .lol img{
+    margin-top:8%;
+}
+
     </style>
   </head>
   <body>
    <div class="lol">
+    <img src="logo.jpg" alt="logo" style="width: 230px; height: 160px; border-radius: 90px;">
 <ul>
- <li><a href="login.html">Home</a></li>
+ 
  <li><a href="Courses1.html">Course&Section</a></li>
  <li><a href="subject.html">Class.Subject</a></li>
  <li><a href="Crecord.html">Class.Record</a></li>
  <li><a href="Officialrecord.html">Official.Record</a></li>
- <li ><a href="login.html">logout</a></li>
+ <li ><a href="login.html">Logout</a></li>
 </ul>
 </div>
 <div class="name">
@@ -133,7 +139,7 @@
   </div>
     <br><br>
     <hr style=" border: 2px solid whitesmoke; width: 950px; margin-left: 26%; margin-top: -1%;">
-    <div class="dropdown"  >
+    <div class="dropdown">
         <button>Courses</button>
         <ul class="dropdown-content" id="course-list">
           <li>ACT-Associate Computer Technology
@@ -150,41 +156,10 @@
                <li>BSIS-1C</li>
                </ul>
            </li>
-           <li>BSOM-Bachelor of Science in Office Management</li>
-
+           <li>BSOM-Bachelor of Science in Office Management
+           </li>
         </ul>
     </div>
-    <script>
- //var courses = {
-   // "ACT-Associate Computer Technology": ["ACT 1-A", "ACT 1-B", "ACT 1-C"],
-   // "BSIS-Bachelor of Science in Information System": ["BSIS 1-A", "BSIS 1-B", "BSIS 1-C"],
-   // "BSOM-Bachelor of Science in Office Management": ["BSOM 1-A", "BSOM 1-B", "BSOM 1-C"],
-//};
-
-//var courseList = document.getElementById("course-list");
-
-      //   Object.keys(courses).forEach(course => {
-    //var li = document.createElement("li");
-   // li.textContent = course;
-   // var ul = document.createElement("ul");
-   // courses[course].forEach(section => {
-     //   var sectionLi = document.createElement("li");
-      //  var link = document.createElement("a");
-//link.textContent = section;
-       // link.href = section.html;
-      //  sectionLi.appendChild(link);
-       // ul.appendChild(sectionLi);
-       
-   // });
-  //  li.appendChild(ul);
-  //  courseList.appendChild(li);
-//  });
-
-
-//document.getElementById('course-list').addEventListener('click', () => {
- //   window.location.href = 'subject.html';
-//});
-
-    </script>
+    
 </body>
 </html>

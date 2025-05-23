@@ -34,56 +34,22 @@
             color: aliceblue;
             font-family: 'Courier New', Courier, monospace;
             padding-top: 0%;
-            margin-left: 25%;
-            margin-top: -66%;
+            margin-left: 15%;
+            margin-top: 6%;
         }
-        ul li:hover{
-            background-color: greenyellow;
-            width: 190px;
-        }
-        ul li a{
-            text-decoration: none;
-            color: #000;
-        }
-        .lol{
-    background-color: rgb(221, 213, 203);
-    text-align: center;
-    width: 300px;
-    height: 990px;
-    font-size: 26px;
+      
+       
 
-}
-.lol ul{
-  list-style: none;
-  padding-top:19% ;
- flex-direction: column;
- gap: 5px;
- float: left;
- position: static;
-}
-.lol ul li{
-    padding: 10px ;
-    gap: 20px;
-    font-size: 19px;
-    margin-left: 29%;
-    text-align: center;
-}
-.lol ul li a{
-    text-decoration: none;
-    color: rgb(75, 31, 233);
-     
-}
-   .lol li:hover{
-     background-color: greenyellow;
-    width: 150px;
-          }
+
+  
+          
           .offi h1{
             color: aliceblue;
             margin-left: 30%;
           }
           .offi {
             margin-top: 3%;
-            margin-left: 29%;
+            margin-left: 16%;
           }
            .offi h2{
             color: aliceblue;
@@ -101,24 +67,26 @@
             border-radius: 30px;
             margin-top: 1%;
           }
+           .bcc{
+              background-color: chartreuse;
+            width: 130px;
+            height: 30px;
+            border:none;
+            margin-left: 57%;
+            border-radius: 30px;
+            margin-top: 1%;
+          }
     </style>
 </head>
 <body>
 <div class="lol">
-<ul>
- <li><a href="login.html">Home</a></li>
- <li><a href="Courses1.html">Course&Section</a></li>
- <li><a href="subject.html">Class.Subject</a></li>
- <li><a href="Crecord.html">Class.Record</a></li>
- <li><a href="Officialrecord.html">Official.Record</a></li>
- <li ><a href="login.html">logout</a></li>
-</ul>
+
 </div>
 <div class="name">
 <h1>E-Class Record</h1>
   </div>
     <br><br>
-    <hr style=" border: 2px solid whitesmoke; width: 950px; margin-left: 26%; margin-top: -1%;">
+    <hr style=" border: 2px solid whitesmoke; width: 950px; margin-left: 14%; margin-top: -1%;">
 
 
     <div class="offi">
@@ -147,10 +115,11 @@
             </tr>
         </tbody>
     </table>
-    <button class="ptt" onclick="print()">Print</button>
+    <button id="print" class="ptt" onclick="print()">Print</button>
+    <button class="bcc" onclick="back()">Back</button>
 </div>
     <script>
-        let currentStudent = JSON.parse(localStorage.getItem("currentStudent"));
+        var currentStudent = JSON.parse(localStorage.getItem("currentStudent"));
         document.getElementById("student-name").innerHTML = currentStudent.name;
         document.getElementById("student-id").innerHTML = currentStudent.id;
         
@@ -158,10 +127,14 @@
          document.getElementById("student-grade").innerHTML = currentStudent.grade;
          document.getElementById("student-grade").innerHTML = currentStudent.grade;
 
-         function print(){
-            window.print();
-        }
          
+        document.getElementById("print").addEventListener("click", function() {
+        window.print();
+      });
+        
+         function back(){
+         window.location.href="student.html";
+         }
     </script>
 </body>
 </html>
